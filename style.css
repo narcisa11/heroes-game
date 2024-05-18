@@ -1,0 +1,198 @@
+body {
+  background-image: url("assets/bg-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: top center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  cursor: grab;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background-color: rgb(0, 0, 0, 0.1);
+  color: rgb(132, 30, 38);
+  text-shadow: 3px 3px rgb(30, 33, 169);
+  animation: pulse-fade-title 2s ease-in-out infinite;
+}
+
+@keyframes pulse-fade-title {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 20px;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid;
+  text-transform: uppercase;
+  animation: float-button 2s ease-in-out infinite;
+  transition: background-color 0.3s ease;
+}
+
+@keyframes float-button {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.start-fight {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.heroes-container {
+  display: none;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.hero-container {
+  background-color: rgba(120, 106, 106, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 300px;
+  flex-basis: 30%;
+  border-radius: 20px;
+}
+
+.hero-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1;
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.hero-avatar {
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 30%;
+}
+
+.wonderwoman {
+  background-image: url("assets/wonderwoman.png");
+}
+
+.superman {
+  background-image: url("assets/superman.png");
+}
+
+.scarletwitch {
+  background-image: url("assets/scarletwitch.png");
+}
+
+.hero-name {
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.show-winner {
+  display: none;
+  text-align: center;
+  color: rgb(224, 231, 222, 0.8);
+  padding: 9px;
+  width: 800px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 100px auto;
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+/* Responsive CSS */
+
+@media screen and (max-width: 767px) {
+  body {
+    background-repeat: repeat;
+  }
+
+  .heroes-container {
+    flex-direction: column;
+    order: 2;
+  }
+
+  .hero-container {
+    margin-bottom: 20px;
+    order: 2;
+    width: auto;
+  }
+
+  .hero-details {
+    margin-bottom: 20px;
+  }
+
+  .show-winner {
+    width: auto;
+    order: 1;
+  }
+}
